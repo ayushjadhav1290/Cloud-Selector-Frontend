@@ -20,14 +20,16 @@ export default function Page() {
           <ScrollContent />
 
           {/* Chat Button */}
+          
           {!showSite && (
             <button
               onClick={() => setShowSite(true)}
               className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
             >
-              Open Chat
+              Chat
             </button>
           )}
+          
 
           {/* Render the whole external site when clicked */}
           {showSite && (
