@@ -33,8 +33,8 @@ export default function ScrollContent() {
     const section2Opacity = useTransform(scrollYProgress, [0.5, 0.6, 0.7, 0.8], [0, 1, 1, 0]);
     const section2Y = useTransform(scrollYProgress, [0.5, 0.6, 0.7, 0.8], [50, 0, 0, -50]);
 
-    // 90% - CTA: Fades in starting at 85%, fully visible by 95% (approx 2nd last frame of 23 frames)
-    // 23 frames. Frame 21 is ~91%. Frame 22 is ~95%.
+    // 90% - CTA: Fades in starting at 85%, fully visible by 95% (approx 2nd last frame of 20 frames)
+    // 20 frames. Frame 18 is ~91%. Frame 19 is ~95%.
     const ctaOpacity = useTransform(scrollYProgress, [0.85, 0.95], [0, 1]);
     const ctaY = useTransform(scrollYProgress, [0.85, 0.95], [50, 0]);
     const ctaPointerEvents = useTransform(scrollYProgress, (v) => v > 0.9 ? 'auto' : 'none');
@@ -47,8 +47,8 @@ export default function ScrollContent() {
                 style={{ opacity: heroOpacity, y: heroY, pointerEvents: heroPointerEvents }}
                 className="fixed top-0 left-0 w-full h-screen flex flex-col items-start justify-start p-6 md:p-12"
             >
-                <h1 className="text-7xl md:text-9xl font-bold tracking-tighter mb-6 text-left">Nebula Cloud</h1>
-                <p className="text-2xl md:text-3xl text-white/70 font-light text-left pl-2">A minimal digital infrastructure.</p>
+                <h1 className="text-7xl md:text-9xl font-bold tracking-tighter mb-6 text-left">Cloud Selector</h1>
+                <p className="text-2xl md:text-3xl text-white/70 font-light text-left pl-2">From clutter to cloud clarity..</p>
             </motion.div>
 
             {/* Section 1 */}
@@ -86,7 +86,7 @@ export default function ScrollContent() {
                 }}
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.5 }}
-                className="fixed bottom-8 left-1/2 z-[9999] flex items-center gap-3 px-8 py-4 bg-white rounded-full text-[#0b1f24] font-bold text-lg group shadow-[0_0_40px_-10px_rgba(255,255,255,0.5)]"
+                className="fixed bottom-32 left-1/2 z-[9999] flex items-center gap-3 px-6 py-2 chat-pill font-bold text-lg group"
             >
                 <span className="font-bold">Chat</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">

@@ -3,12 +3,12 @@
 import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const FRAME_COUNT = 23;
-const START_FRAME = 1;
+const FRAME_COUNT = 20;
+const START_FRAME = 2;
 
 const getFramePath = (index: number) => {
     const frameNumber = (index + START_FRAME).toString().padStart(3, '0');
-    return `/aiFrames/ezgif-frame-${frameNumber}.jpg`;
+    return `/void%20frames/ezgif-frame-${frameNumber}.jpg`;
 };
 
 export default function CloudScroll() {
