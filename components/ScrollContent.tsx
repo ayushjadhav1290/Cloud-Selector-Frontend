@@ -54,20 +54,22 @@ export default function ScrollContent() {
             {/* Section 1 */}
             <motion.div
                 style={{ opacity: section1Opacity, y: section1Y }}
-                className="fixed top-0 left-0 w-full h-screen flex items-center px-10 md:px-24"
+                className="fixed top-0 left-0 w-1/4 h-screen flex items-center px-10 md:px-24"
             >
-                <div className="max-w-xl">
+                <div className="max-w-lg">
                     <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-white">Modular Architecture</h2>
+                    <p className="text-lg md:text-xl text-white/80 leading-relaxed">Modular architecture powers the core of our cloud selector platform. Each feature operates as an independent module, enabling rapid innovation, seamless scalability, and effortless integration. This structure ensures the platform remains flexible, efficient, and ready to adapt to any cloud environment.</p>
                 </div>
             </motion.div>
 
             {/* Section 2 */}
             <motion.div
-                style={{ opacity: section2Opacity, y: section2Y }}
-                className="fixed top-0 right-0 w-full h-screen flex items-center justify-end px-10 md:px-24"
+                style={{ opacity: section2Opacity, y: section2Y, left: '75%' }}
+                className="fixed top-0 w-1/4 h-screen flex items-center justify-end px-10 md:px-24"
             >
-                <div className="max-w-xl text-right">
+                <div className="max-w-lg text-right">
                     <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-white">Connected Databases</h2>
+                    <p className="text-lg md:text-xl text-white/80 leading-relaxed">With connected databases at its core, the platform allows data to move freely and securely across services. This interconnected structure improves performance, simplifies data management, and ensures applications always have access to the information they need.</p>
                 </div>
             </motion.div>
 
