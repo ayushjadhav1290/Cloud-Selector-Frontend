@@ -30,8 +30,8 @@ export default function Page() {
         className="fixed bottom-32 left-1/2 transform -translate-x-1/2 z-[9999]"
       >
         <a
-          href="https://eternity-systems.onrender.com"
-          target="_self"
+          href="#"
+          onClick={(e) => { e.preventDefault(); window.location.href = "https://eternity-systems.onrender.com"; }}
           className="flex items-center gap-2 px-6 py-2 chat-pill font-bold text-base transition-all hover:scale-105 active:scale-95"
         >
           <span>Chat</span>
