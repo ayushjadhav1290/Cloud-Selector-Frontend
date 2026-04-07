@@ -22,9 +22,9 @@ export default function ScrollContent() {
 
     // Opacity Transforms
     // 0% - Hero: Visible 0-10%, fades out by 20%
-    const heroOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
-    const heroY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
-    const heroPointerEvents = useTransform(scrollYProgress, (v) => v < 0.2 ? 'auto' : 'none');
+    const heroOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+    const heroY = useTransform(scrollYProgress, [0, 0.05], [0, -10]);
+    const heroPointerEvents = useTransform(scrollYProgress, (v) => v < 0.05 ? 'auto' : 'none');
 
     // 30% - Left Text: Fades in 20-30%, stays, fades out 40-50%
     const section1Opacity = useTransform(scrollYProgress, [0.2, 0.3, 0.4, 0.5], [0, 1, 1, 0]);
@@ -45,11 +45,14 @@ export default function ScrollContent() {
 
             {/* Hero Section */}
             <motion.div
-                style={{ opacity: heroOpacity, y: heroY, pointerEvents: heroPointerEvents }}
-                className="fixed top-0 left-0 w-full h-screen flex flex-col items-start justify-start p-6 md:p-12"
+                initial={{ opacity: 0, y: 10, x: "-50%" }}
+                animate={{ opacity: 1, y: 0, x: "-50%" }}
+                transition={{ duration: 0.6 }}
+                style={{ opacity: heroOpacity, y: heroY, pointerEvents: heroPointerEvents, x: "-50%" }}
+                className="fixed top-10 left-1/2 w-full flex flex-col items-center text-center px-6 z-10"
             >
-                <h1 className="text-7xl md:text-9xl font-bold tracking-tighter mb-6 text-left">Cloud Selector</h1>
-                <p className="text-2xl md:text-3xl text-white/70 font-light text-left pl-2">From clutter to cloud clarity..</p>
+                <h1 className="text-7xl md:text-9xl font-bold tracking-tighter mb-1.5">Cloud Selector</h1>
+                <p className="text-2xl md:text-3xl text-white/70 font-light">From clutter to cloud clarity..</p>
             </motion.div>
 
             {/* Section 1 */}
@@ -78,18 +81,19 @@ export default function ScrollContent() {
             {/* Persistent Floating Chat Button */}
             <Link href="/chat">
                 <motion.div
-                initial={{ opacity: 0, scale: 0.8, x: "-50%" }}
+                initial={{ opacity: 0, scale: 0.8, x: "-50%", y: 100 }}
                 animate={{
                     opacity: showChat ? 1 : 0,
                     scale: showChat ? 1 : 0.8,
                     x: "-50%",
+                    y: showChat ? 0 : 100,
                     pointerEvents: showChat ? 'auto' : 'none'
                 }}
                 whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.5 }}
-                className="fixed bottom-32 left-1/2 z-[9999] flex items-center gap-3 px-6 py-2 chat-pill font-bold text-lg group"
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="fixed bottom-[30px] left-1/2 top-auto z-[9999] flex items-center gap-3 px-6 py-2 chat-pill font-bold text-lg group"
             >
-                <span className="font-bold">Chat</span>
+                <span className="font-bold"> Chat </span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
